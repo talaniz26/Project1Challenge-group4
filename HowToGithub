@@ -1,0 +1,6 @@
+Clone the repo
+Go to the folder in VS Code
+Make a file you want to update
+git add . 
+git commit -m "your message here"
+git push origin "name of your branch here"
