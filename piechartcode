@@ -1,0 +1,19 @@
+
+
+# data and index
+index = TX_Industry_sum.index
+values = TX_Industry_sum
+
+# Calc the percentage
+total = sum(values)
+percentages = [(val / total) * 100 for val in values]
+
+# labels with condition for segments below 1%
+labels = [f"{index[i]}: {percentages[i]:.1f}%" if percentages[i] >= 1 else '' for i in range(len(index))]
+
+# pie chart
+plt.pie(values, labels=labels, autopct="", shadow=True)
+plt.title("Industry Releases Distribution")
+plt.axis("equal")
+plt.legend(loc='center left', bbox_to_anchor=(1.3, 0, 0.3, 1), prop={"size": 6})
+plt.savefig("png_output/Fig3.png")
